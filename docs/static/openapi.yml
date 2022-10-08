@@ -51765,6 +51765,11 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
+  pr3nom.checkers.checkers.MsgCreateGameResponse:
+    type: object
+    properties:
+      gameIndex:
+        type: string
   pr3nom.checkers.checkers.Params:
     type: object
     description: Params defines the parameters for the module.
