@@ -16,7 +16,7 @@ const (
     carol = "cosmos1e0w5t53nrq7p66fye6c8p0ynyhf6y24l4yuxd7"
 )
 
-func GetStoredGame1() *types.StoredGame {
+func GetStoredGame1() types.StoredGame {
     return types.StoredGame{
         Black: alice,
         Red:   bob,
