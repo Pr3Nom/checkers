@@ -16,6 +16,8 @@ func (k msgServer) CreateGame(goCtx context.Context, msg *types.MsgCreateGame) (
 		panic("SystemInfo not found")
 	}
 
+	newIndex := strconv.FormatUint(systemInfo.NextId, 10)
+
 	newGame := rules.New()
 	storedGame := types.StoredGame{
 	    Index: newIndex,
