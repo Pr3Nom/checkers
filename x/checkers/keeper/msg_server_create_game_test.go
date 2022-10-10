@@ -1,10 +1,14 @@
 package keeper_test
 
 import (
+	"context"
 	"testing"
 
+	keepertest "github.com/b9lab/checkers/testutil/keeper"
+	"github.com/Pr3Nom/checkers/x/checkers/keeper"
 	"github.com/Pr3Nom/checkers/x/checkers/types"
 	"github.com/stretchr/testify/require"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 const (
@@ -24,4 +28,9 @@ func TestCreateGame(t *testing.T) {
 	require.EqualValues(t, types.MsgCreateGameResponse{
 		GameIndex: "", // TODO: update with a proper value when updated
 	}, *createResponse)
+}
+
+func setupMsgServer(t testing.TB) (types.MsgServer, context.Context) {
+	k, ctx := keepertest.CheckersKeeper(t)
+	return keeper.NewMsgServerImpl(*k), sdk.WrapSDKContext(ctx)
 }
