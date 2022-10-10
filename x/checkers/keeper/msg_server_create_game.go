@@ -35,6 +35,6 @@ func (k msgServer) CreateGame(goCtx context.Context, msg *types.MsgCreateGame) (
 	k.Keeper.SetSystemInfo(ctx, systemInfo)
 
 	return &types.MsgCreateGameResponse{
-	    GameIndex: newIndex
+	    GameIndex: newIndex,
 	}, nil
 }
