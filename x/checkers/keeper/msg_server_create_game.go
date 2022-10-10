@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/Pr3Nom/checkers/x/checkers/types"
 	"github.com/Pr3Nom/checkers/x/checkers/rules"
