@@ -34,7 +34,7 @@ func TestCreateGame(t *testing.T) {
 	})
 	require.Nil(t, err)
 	require.EqualValues(t, types.MsgCreateGameResponse{
-		GameIndex: "1", 
+		GameIndex: "", 
 	}, *createResponse)
 }
 
