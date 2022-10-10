@@ -19,14 +19,14 @@ const (
 )
 
 func setupMsgServerCreateGame(t testing.TB) (types.MsgServer, keeper.Keeper, context.Context) {
-	k, ctx := keepertest.CheckersKeeper(t)
-	checkers.InitGenesis(ctx, *k, *types.DefaultGenesis())
-	return keeper.NewMsgServerImpl(*k), *k, sdk.WrapSDKContext(ctx)
+    k, ctx := keepertest.CheckersKeeper(t)
+    checkers.InitGenesis(ctx, *k, *types.DefaultGenesis())
+    return keeper.NewMsgServerImpl(*k), *k, sdk.WrapSDKContext(ctx)
 }
 
 
 func TestCreateGame(t *testing.T) {
-	msgServer, _, context := setupMsgServer(t)
+	msgServer, context := setupMsgServer(t)
 	createResponse, err := msgServer.CreateGame(context, &types.MsgCreateGame{
 		Creator: alice,
 		Black:   bob,
@@ -34,7 +34,7 @@ func TestCreateGame(t *testing.T) {
 	})
 	require.Nil(t, err)
 	require.EqualValues(t, types.MsgCreateGameResponse{
-		GameIndex: "1", 
+		GameIndex: "1",
 	}, *createResponse)
 }
 
