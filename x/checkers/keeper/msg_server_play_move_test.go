@@ -104,6 +104,7 @@ func TestPlayMoveSavedGame(t *testing.T) {
 		Turn:  "r",
 		Black: bob,
 		Red:   carol,
+		MoveCount: 1,
 	}, game1)
 }
 
@@ -255,6 +256,7 @@ func TestPlayMove2SavedGame(t *testing.T) {
 		Turn:  "b",
 		Black: bob,
 		Red:   carol,
+		MoveCount: 2,
 	}, game1)
 }
 
@@ -365,5 +367,6 @@ func TestPlayMove3SavedGame(t *testing.T) {
 		Turn:  "r",
 		Black: bob,
 		Red:   carol,
+		MoveCount: 3,
 	}, game1)
 }

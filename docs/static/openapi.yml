@@ -29870,6 +29870,9 @@ paths:
                       type: string
                     red:
                       type: string
+                    moveCount:
+                      type: string
+                      format: uint64
               pagination:
                 type: object
                 properties:
@@ -29997,6 +30000,9 @@ paths:
                     type: string
                   red:
                     type: string
+                  moveCount:
+                    type: string
+                    format: uint64
         default:
           description: An unexpected error response.
           schema:
@@ -51781,6 +51787,8 @@ definitions:
         format: int32
       winner:
         type: string
+  pr3nom.checkers.checkers.MsgRejectGameResponse:
+    type: object
   pr3nom.checkers.checkers.Params:
     type: object
     description: Params defines the parameters for the module.
@@ -51802,6 +51810,9 @@ definitions:
               type: string
             red:
               type: string
+            moveCount:
+              type: string
+              format: uint64
       pagination:
         type: object
         properties:
@@ -51843,6 +51854,9 @@ definitions:
             type: string
           red:
             type: string
+          moveCount:
+            type: string
+            format: uint64
   pr3nom.checkers.checkers.QueryGetSystemInfoResponse:
     type: object
     properties:
@@ -51872,6 +51886,9 @@ definitions:
         type: string
       red:
         type: string
+      moveCount:
+        type: string
+        format: uint64
   pr3nom.checkers.checkers.SystemInfo:
     type: object
     properties:

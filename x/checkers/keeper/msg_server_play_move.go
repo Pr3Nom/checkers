@@ -1,8 +1,8 @@
 package keeper
 
 import (
-	"strconv"
 	"context"
+	"strconv"
 
 	"github.com/Pr3Nom/checkers/x/checkers/rules"
 	"github.com/Pr3Nom/checkers/x/checkers/types"
@@ -54,6 +54,7 @@ func (k msgServer) PlayMove(goCtx context.Context, msg *types.MsgPlayMove) (*typ
 		return nil, sdkerrors.Wrapf(types.ErrWrongMove, moveErr.Error())
 	}
 
+	storedGame.MoveCount++
 	storedGame.Board = game.String()
 	storedGame.Turn = rules.PieceStrings[game.Turn]
 	k.Keeper.SetStoredGame(ctx, storedGame)
