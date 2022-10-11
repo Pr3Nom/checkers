@@ -51770,6 +51770,17 @@ definitions:
     properties:
       gameIndex:
         type: string
+  pr3nom.checkers.checkers.MsgPlayMoveResponse:
+    type: object
+    properties:
+      capturedX:
+        type: integer
+        format: int32
+      capturedY:
+        type: integer
+        format: int32
+      winner:
+        type: string
   pr3nom.checkers.checkers.Params:
     type: object
     description: Params defines the parameters for the module.
